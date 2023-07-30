@@ -1,14 +1,21 @@
-# Importação da biblioteca matplotlib
+# Importação da biblioteca matplotlib para plotar o grafico
 import matplotlib.pyplot as plt
 
 
 def input_vector(prompt):
+    # Inicia um loop infinito para continuar pedindo a entrada até que uma entrada válida seja fornecida
     while True:
         try:
+            # Solicita a entrada do usuário usando o prompt fornecido
             user_input = input(prompt)
+
+            # Divide a entrada do usuário em partes separadas por espaços e converte cada parte em um número em ponto flutuante resultando em uma lista de números em ponto flutuante
             vector = [float(num_str) for num_str in user_input.split()]
+
+            # Retorna a lista de números em ponto flutuante
             return vector
         except ValueError:
+            # Caso a conversão para ponto flutuante falhe, uma mensagem de erro é impressa e o loop while continua para solicitar uma nova entrada
             print(
                 "Entrada inválida. Por favor, insira um vetor válido (por exemplo, '1 2 3')."
             )
